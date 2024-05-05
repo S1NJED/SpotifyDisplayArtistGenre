@@ -8,6 +8,8 @@ async function getSpotifyAccessToken() {
     var clientSecret = await browser.storage.local.get("WEB_EXT_SPOTIFY_CLIENT_SECRET");
     clientSecret = clientSecret.WEB_EXT_SPOTIFY_CLIENT_SECRET;
 
+    if (!clientId && !clientSecret) return;
+
     var URL = "https://accounts.spotify.com/api/token?grant_type=client_credentials";
 
     var req = await fetch(URL, {
@@ -49,7 +51,14 @@ async function getArtistGenre(artistId) {
 
     genres.forEach(genre => {
         var span = document.createElement("span");
-        span.textContent = genre
+        var a = document.createElement("a");
+
+        a.textContent = genre
+        a.href= "https://open.spotify.com/search/" + genre
+        a.style.color = "black";
+
+        span.appendChild(a)
+
         span.style.border = "1px solid turquoise";
         span.style.backgroundColor = "#1ED760";
         span.style.marginLeft = "2%";
@@ -64,6 +73,7 @@ async function getArtistGenre(artistId) {
 }
 
 setInterval(async () => {
+    
     var div = document.querySelector("div[role='contentinfo']");
 
     if (!div) return;
