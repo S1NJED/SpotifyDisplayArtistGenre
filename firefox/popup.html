@@ -1,0 +1,44 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img {
+                display: inline-block;
+                vertical-align: middle;
+                max-height: 100px;
+                width: auto;
+                height: auto;
+            }
+            h1 {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+    </header>
+    <body>
+        <img src="logo.png" height="10%">
+        <h1>DisplayGenreArtistSpotify</h1>
+        
+        <p>This extension display the genres (if any) of the artist you currently listening to!</p>
+
+        <p>You will need to provide a CLIENT_ID and a CLIENT_SECRET. Watch <a href="https://www.youtube.com/watch?v=mBgg9i1ghNw">this video</a> that explains how to do it.</p>
+
+        <br>
+
+        <label>Client ID:</label>
+        <input type="text" id="client-id">
+
+        <label>Client Secret:</label>
+        <input type="text" id="client-secret">
+
+        <button id="submit-btn">Submit</button>
+
+        <br>
+
+        <p><a href="https://github.com/S1NJED">github@S1NJED</a></p>
+
+        <script type="text/javascript" src="listener.js"></script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "SpotifyWebDisplayArtistGenre",
+    "version": "1.0",
+
+    "description": "This extension display the genre of the current artist on Spotify Web (only).",
+
+    "icons": {
+        "48": "logo.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://open.spotify.com/"],
+            "js": ["script.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "storage",
+        "https://accounts.spotify.com/*",
+        "https://api.spotify.com/*"
+    ]
+
+
+}
